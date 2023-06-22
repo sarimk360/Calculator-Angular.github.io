@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="h1">Calculator Using Angular!</div>
+    <div class="calc-container">
+        <div class="text-input">{{displayItem}}</div>
+        <div class="button-main">
+            <div class="buttons" *ngFor="let item of calcItems"
+                [ngClass]="{'operatorClass': item.type=='operator', 'numberClass': item.type=='number', 'equalsClass': item.type=='='}" (click)="selectedButton(item.value)">
+                {{item.value}}</div>
+        </div>
+
+    </div>
+</div>

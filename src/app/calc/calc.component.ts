@@ -1,0 +1,177 @@
+import { Component} from '@angular/core';
+
+@Component({
+  selector: 'app-calc',
+  templateUrl: './calc.component.html',
+  styleUrls: ['./calc.component.css']
+})
+export class CalcComponent {
+ public calcItems=
+[
+  {
+   id:0, 
+   value:'AC',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+   id:1, 
+   value:'DE',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+   id:2, 
+   value:'%',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+   id:3, 
+   value:'/',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+   id:4, 
+   value:'7',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+     {
+   id:5, 
+   value:'8',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+   id:6, 
+   value:'9',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+   id:7, 
+   value:'*',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+   id:8, 
+   value:'4',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+   id:9, 
+   value:'5',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+     {
+   id:10, 
+   value:'6',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+     {
+   id:11, 
+   value:'-',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+    {
+    id:12, 
+   value:'1',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:13, 
+   value:'2',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:14, 
+   value:'3',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:15, 
+   value:'+',
+   color:'grey',
+   type:'operator',
+   bgColor:'blue'
+    },
+     {
+    id:16, 
+   value:'00',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:17, 
+   value:'0',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:18, 
+   value:'.',
+   color:'grey',
+   type:'number',
+   bgColor:'blue'
+    },
+    {
+    id:19, 
+   value:'=',
+   color:'grey',
+   type:'=',
+   bgColor:'blue'
+    }
+]
+storeItem='';
+result='';
+displayItem='';
+clear='';
+selectedButton(item:any)
+{
+  if(item == '='){
+  this.result = eval(this.storeItem);
+  this.displayItem=this.result;
+
+  } 
+  else if(item == 'AC'){
+    this.storeItem=this.clear;
+    this.displayItem=this.storeItem;
+  }
+  else if(item == 'DE'){
+    this.storeItem=this.storeItem.slice(0, -1);
+    this.displayItem=this.storeItem;
+  }
+  else{
+    this.storeItem =this.storeItem + item;
+    this.displayItem = this.storeItem;
+  }
+}
+}
+
